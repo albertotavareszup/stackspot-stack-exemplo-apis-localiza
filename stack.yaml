@@ -1,4 +1,4 @@
-description: Conjunto de plugins e templates para consumir criar aplicacoes e consumir apis da Localiza
+description: Conjunto de plugins para consumir apis da Localiza
 name: apis-localiza
 display-name: apis-localiza
 picture: stack.png
