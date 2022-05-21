@@ -1,0 +1,15 @@
+description: Conjunto de plugins e templates para consumir criar aplicacoes e consumir apis da Localiza
+name: apis-localiza
+display-name: apis-localiza
+picture: stack.png
+category: backend # Ref: https://docs.stackspot.com/latest/docs/creators-guide/yaml/#category
+compatibility: # Put a list of technologies compatible with the stack
+  - java
+  - spring
+technologies: # Ref: https://docs.stackspot.com/latest/docs/creators-guide/yaml/#technologies 
+  - docker 
+about: docs/about.md
+use-cases:
+  - title: Use Case Title
+    content: docs/use-case.md
+    stackfile: stackfiles/default.yaml
