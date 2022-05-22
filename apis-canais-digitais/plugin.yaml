@@ -1,4 +1,5 @@
 name: apis-canais-digitais
+api-version: v1
 description: Plugin para criar boilerplate code para consumir apis dos canais digitais 
 display-name: apis-canais-digitais
 picture: plugin.png
@@ -19,7 +20,8 @@ inputs:
     type: text
     name: stack_alvo
     items:
-      - Spring Open Feign      
+      - Spring Open Feign   
+      - Javascript geral   
   - label: Defina o caminho que você quer gerar os arquivos
     type: text
     name: caminho_geracao_arquivos
@@ -36,3 +38,11 @@ hooks:
       variable: stack_alvo
       operator: ==
       value: Spring Open Feign   
+  - type: render-templates
+    trigger: after-render    
+    path: templates-javascript-geral
+    working-dir: "{{project_name}}"
+    condition:
+      variable: stack_alvo
+      operator: ==
+      value: Javascript geral         
