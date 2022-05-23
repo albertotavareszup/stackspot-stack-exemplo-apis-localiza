@@ -3,11 +3,12 @@
      static async getAutenticado(caminho,clientId){             
             if(!clientId){
                 throw new Error("Precisa do client id para fazer requisicao")
-            }
+            }            
             const res = await fetch(caminho, {
                 method: 'get',
                 headers: {              
-                    client_id: `${clientId}`
+                    client_id: `${clientId}`,
+                    "user-agent":"stackspot"
                 }
                 
             })
@@ -26,7 +27,7 @@
      * 
      * @param {*} cidade nome da cidade que supostamente tem agências
      */
-    static async listaAgencias(cidade){
+    static async listaLocalidades(cidade){
         return ApiCanaisDigitais.getAutenticado(`https://canaisdigitais-api.localiza.com/al-canaisdigitais-site/v1/Agencias/localidade/${cidade}`,"{{inputs.client_id}}").json()        
     }
 
