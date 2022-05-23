@@ -28,7 +28,8 @@
      * @param {*} cidade nome da cidade que supostamente tem agências
      */
     static async listaLocalidades(cidade){
-        return ApiCanaisDigitais.getAutenticado(`https://canaisdigitais-api.localiza.com/al-canaisdigitais-site/v1/Agencias/localidade/${cidade}`,"{{inputs.client_id}}").json()        
+        const res = await ApiCanaisDigitais.getAutenticado(`https://canaisdigitais-api.localiza.com/al-canaisdigitais-site/v1/Agencias/localidade/${cidade}`,"{{inputs.client_id}}")
+        return res.json();
     }
 
     /**
@@ -36,7 +37,8 @@
      * @param {*} codigoLocaliza codigo da localiza que identifica a cidade. Você acessá-lo olhando para o retorno do endpoint que lista agencias
      */
      static async listaHorariosAgencia(codigoLocaliza){
-        return ApiCanaisDigitais.getAutenticado(`https://canaisdigitais-api.localiza.com/al-canaisdigitais-site/v1/Agencias/${codigoLocaliza}/datas-disponiveis-locacao`,"{{inputs.client_id}}").json()        
+        const res = await ApiCanaisDigitais.getAutenticado(`https://canaisdigitais-api.localiza.com/al-canaisdigitais-site/v1/Agencias/${codigoLocaliza}/datas-disponiveis-locacao`,"{{inputs.client_id}}")
+        return res.json()
     }    
 
 }
